@@ -9,10 +9,9 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <name>CucumberFramework</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>http://maven.apache.org</url>
 
-  <properties>
+<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -32,15 +31,13 @@
 					</configuration>
 				</plugin>
 				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.19.1</version>
-					<configuration>
-						<suiteXmlFiles>
-							<suiteXmlFile>testng.xml</suiteXmlFile>
-						</suiteXmlFiles>
-						<testFailureIgnore>false</testFailureIgnore>
-					</configuration>
+					 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <configuration>
+                <testFailureIgnore>true</testFailureIgnore>
+                <shutdown>kill</shutdown> <!-- Use it if required-->
+                </configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -51,7 +48,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>2.19.1</version>
+				<version>3.0.0-M3</version>
 			</plugin>
 		</plugins>
 	</reporting>
@@ -143,6 +140,7 @@
 			<artifactId>extentreports</artifactId>
 			<version>3.0.5</version>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
 		<dependency>
 			<groupId>org.freemarker</groupId>
