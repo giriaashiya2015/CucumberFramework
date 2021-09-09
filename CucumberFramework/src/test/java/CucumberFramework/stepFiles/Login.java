@@ -22,7 +22,7 @@ public class Login {
 
 	@And("^User enter the valid username$")
 	public void user_enter_the_valid_username() throws Throwable {
-		System.out.println("This is Mwethod 3");
+		System.out.println("This is Mwethod for the valid user");
 
 	}
 
