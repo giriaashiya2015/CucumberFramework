@@ -2,8 +2,9 @@ package CucumberFramework.stepFiles;
 
 import java.util.concurrent.TimeUnit;
 
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.java.After;
@@ -12,7 +13,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
+import org.junit.Assert;
 public class Login {
 	WebDriver driver;
 
@@ -37,38 +38,40 @@ public class Login {
 	@Given("^User navigates to NewTour website$")
 	public void user_navigates_to_NewTour_website() throws Throwable {
 
-		System.out.println("This is Mwethod 1");
+		driver.get("http://demo.guru99.com/test/newtours/");
 
 	}
 
 	@And("^User clicks on the SignOn button on the homepage$")
 	public void user_clicks_on_the_SignOn_button_on_the_homepage() throws Throwable {
-		System.out.println("This is Mwethod 2");
-
+		driver.findElement(By.xpath("//a[normalize-space()='SIGN-ON']")).click();
 	}
 
 	@And("^User enter the valid username$")
 	public void user_enter_the_valid_username() throws Throwable {
-		System.out.println("This is Mwethod for the valid user");
+		 driver.findElement(By.name("userName")).sendKeys("mercury");
 
 	}
 
 	@And("^User enter the valid password$")
 	public void user_enter_the_valid_password() throws Throwable {
-		System.out.println("This is Mwethod 4");
+		driver.findElement(By.name("password")).sendKeys("mercury");
 
 	}
 
 	@When("^User clicks on the SignOn button$")
 	public void user_clicks_on_the_SignOn_button() throws Throwable {
-		System.out.println("This is Mwethod 5");
+		driver.findElement(By.xpath("//input[@name='submit']")).click();
 
 	}
 
+	@SuppressWarnings("deprecation")
 	@Then("^User should be able to login successfully$")
 	public void user_should_be_able_to_login_successfully() throws Throwable {
-		System.out.println("This is Mwethod 6");
-
+		Thread.sleep(3000);
+		WebElement Login_Successfully= driver.findElement(By.xpath("//h3[normalize-space()='Login Successfully']"));
+		Assert.assertEquals(true, Login_Successfully.isDisplayed());
+		
 	}
 
 }
