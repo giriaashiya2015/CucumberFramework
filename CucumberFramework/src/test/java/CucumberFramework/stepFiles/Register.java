@@ -28,12 +28,13 @@ public class Register {
 	}
 
 
-	 * @After public void tearDown() throws InterruptedException {
-	 *        Thread.sleep(3000); this.driver.manage().deleteAllCookies();
-	 *        this.driver.quit(); this.driver=null;
-	 * 
-	 *        }
-	 **/
+	  @After public void tearDown() throws InterruptedException {
+	        Thread.sleep(3000); this.driver.manage().deleteAllCookies();
+	       this.driver.quit(); this.driver=null;
+	 
+	       
+	 }
+	
 	@Given("^User navigate to NewTour Demo$")
 	public void user_navigate_to_NewTour_Demo() throws Throwable {
 		driver.get("http://demo.guru99.com/test/newtours/");
@@ -82,4 +83,5 @@ public class Register {
 	
 	}
 
+	  new Testy 
 }
