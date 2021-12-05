@@ -74,7 +74,7 @@ public class Register {
 	public void user_clicks_on_submit_button() throws Throwable {
 		driver.findElement(By.name("submit")).click();
 		String ActualTitle = driver.getTitle();
-		System.out.println(ActualTitle);
+		System.out.println(ActualTite);
 		String ExpectedTitle= "Register: Mercury Tours";
 		Assert.assertEquals(ExpectedTitle, ActualTitle);
 	        
@@ -83,5 +83,5 @@ public class Register {
 	
 	}
 
-	  new Testy 
+	
 }
