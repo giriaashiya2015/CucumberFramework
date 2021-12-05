@@ -4,7 +4,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -50,8 +52,19 @@ public class Register {
 
 	@And("^User enters the Mailing info$")
 	public void user_enters_the_Mailing_info() throws Throwable {
-	    System.out.println("Test 3");
+	  driver.findElement(By.name("address1")).sendKeys("123 Main Street");
+	  driver.findElement(By.name("city")).sendKeys("NewBase");
+	  driver.findElement(By.name("state")).sendKeys("Maryland");
+	  driver.findElement(By.name("postalCode")).sendKeys("12345");
+	  
+	  
+
+	  
+
+
 	}
+	
+
 
 	@And("^User enters the User Info$")
 	public void user_enters_the_User_Info() throws Throwable {
