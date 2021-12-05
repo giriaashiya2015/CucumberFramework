@@ -27,7 +27,7 @@ public class Register {
 
 	}
 
-	/**
+
 	 * @After public void tearDown() throws InterruptedException {
 	 *        Thread.sleep(3000); this.driver.manage().deleteAllCookies();
 	 *        this.driver.quit(); this.driver=null;
