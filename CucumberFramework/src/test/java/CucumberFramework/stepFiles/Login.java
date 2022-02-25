@@ -57,12 +57,13 @@ public class Login {
 	public void user_enter_the_valid_password() throws Throwable {
 		driver.findElement(By.name("password")).sendKeys("mercury");
 
+		
 	}
 
 	@When("^User clicks on the SignOn button$")
 	public void user_clicks_on_the_SignOn_button() throws Throwable {
 		driver.findElement(By.xpath("//input[@name='submit']")).click();
-
+System.out.println("This is testing");
 	}
 
 	@SuppressWarnings("deprecation")
